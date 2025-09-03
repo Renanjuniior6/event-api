@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { Document, HydratedDocument } from 'mongoose';
 
 export type EventDocument = HydratedDocument<Event>; // Estamos criando um apelido (alias) para quando for chamar a classe Events ela ser atendida por EventDocument
 
