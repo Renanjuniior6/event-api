@@ -9,6 +9,14 @@ export class CreateEventService {                                               
                                                                                         // readonly você não pode alterar repository através da classe service, somente a leitura do repository
     async execute(event: IEventEntity): Promise<IEventEntity> {
         let newEvent = await this.createEventRepository.execute(event);                 // Sempre que for acessar uma injeção de dependencias do constructor nós temos que usar o this para acessar essas dependencias 
-        return newEvent
+        return newEvent;
+    }
+
+    async findEvents() {
+        return await this.createEventRepository.getEvents();
+    }
+
+    async findById() {
+        
     }
 }

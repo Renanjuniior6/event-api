@@ -17,4 +17,12 @@ export class CreateEventRepository {
         return createEvent.toObject();                                      // Vai nos retornar os dados limpos somente as que pertencem a entidade sem as propriedades que o Mongo cria
 
     }
+
+    async getEvents(): Promise<IEventEntity[]> {
+       return await this.eventModel.find().exec();
+    }
+
+    async getEventById() {
+        
+    }
 }

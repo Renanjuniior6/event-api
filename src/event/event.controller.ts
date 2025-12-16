@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { CreateEventService } from './services/create-event.service';
 import type { IEventEntity } from './interfaces/IEventEntity';
 
@@ -10,4 +10,14 @@ export class EventController {
 async create(@Body() event: IEventEntity): Promise<IEventEntity>{
     return this.createEventService.execute(event);
 }
+
+@Get() 
+async findAll() {
+    return this.createEventService.findEvents();
+}
+
+// @Get()
+// async findById() {
+    
+// }
 }
